@@ -1,0 +1,59 @@
+.overview {
+  background-color: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto 14px;
+  padding: 8px;
+  border-radius: 36px;
+}
+
+.balance {
+  color: black;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.balance .title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.balance .amount {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.income-expense {
+  background-color: #272b31;
+  padding: 8px 24px;
+  display: flex;
+  border-radius: 30px;
+}
+
+.income-expense .title {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.income-expense .amount {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.income,
+.expense {
+  /* border: 1px red solid; */
+  text-align: center;
+  width: 100%;
+}
+
+.income .amount {
+  color: #42dcab;
+}
+
+.expense .amount {
+  color: #ff672f;
+}

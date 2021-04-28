@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import Overview from './components/Overview/Overview';
+import Dashboard from './components/Dashboard/Dashboard';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
+  const DUMMY_ITEMS = {
+    income: [
+      {
+        title: 'Salary',
+        amount: 30000,
+      },
+      {
+        title: 'Bonus',
+        amount: 5000,
+      },
+    ],
+    expenses: [
+      {
+        title: 'Rent',
+        amount: 10000,
+      },
+      {
+        title: 'Food',
+        amount: 8000,
+      },
+    ],
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        <Overview items={DUMMY_ITEMS} />
+        <Dashboard items={DUMMY_ITEMS} />
+      </div>
+      <Footer />
+    </>
   );
 }
 

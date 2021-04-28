@@ -1,0 +1,25 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 14px;
+}
+
+.footer a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #6600ff;
+}
+
+@media (hover: hover) {
+  .footer a:hover {
+    text-decoration: underline 1px #6600ff solid;
+  }
+}
+
+@media (hover: none) {
+  .footer a:active {
+    text-decoration: underline 1px #6600ff solid;
+  }
+}
