@@ -4,22 +4,23 @@
   backdrop-filter: blur(10px);
   text-align: center;
   padding: 14px;
+  font-weight: 300;
 }
 
 .footer a {
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  color: #6600ff;
+  color: #007fff;
 }
 
 @media (hover: hover) {
   .footer a:hover {
-    text-decoration: underline 1px #6600ff solid;
+    text-decoration: underline 1px #007fff solid;
   }
 }
 
 @media (hover: none) {
   .footer a:active {
-    text-decoration: underline 1px #6600ff solid;
+    text-decoration: underline 1px #007fff solid;
   }
 }

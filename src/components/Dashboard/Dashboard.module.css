@@ -13,10 +13,13 @@
   margin: 0 7px;
   padding: 20px;
   border-radius: 36px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   /* border: 1px red solid; */
+  text-align: center;
 }

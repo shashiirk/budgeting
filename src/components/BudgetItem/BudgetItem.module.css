@@ -1,0 +1,32 @@
+.item {
+  /* border: 1px red solid; */
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box {
+  /* border: 1px skyblue solid; */
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.date {
+  color: #808080;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.income-amount {
+  color: #42dcab;
+  /* border: 1px salmon solid; */
+}
+
+.expenses-amount {
+  color: #ff672f;
+}
