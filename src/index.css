@@ -7,12 +7,12 @@
 body {
   /* border: 1px yellow solid; */
   background-image: url(./assets/bg.svg);
-  background-color: #393e46;
+  background-color: #2d3138;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   font-family: 'Inter', sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
 }

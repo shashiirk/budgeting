@@ -1,4 +1,5 @@
 .overview {
+  /* border: 1px crimson solid; */
   background-color: rgba(255, 255, 255, 0.45);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -26,7 +27,7 @@
 }
 
 .income-expense {
-  background-color: #272b31;
+  background-color: #202328;
   padding: 8px 24px;
   display: flex;
   border-radius: 30px;
@@ -34,7 +35,7 @@
 
 .income-expense .title {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .income-expense .amount {

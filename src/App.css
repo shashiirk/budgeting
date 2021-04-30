@@ -3,8 +3,9 @@
   max-width: 800px;
   width: 100%;
   height: calc(100vh - 48px);
-  padding: 28px 14px;
+  padding: 14px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }

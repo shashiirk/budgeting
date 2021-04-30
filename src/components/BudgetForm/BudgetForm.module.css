@@ -1,5 +1,6 @@
 .form {
   /* border: 1px red solid; */
+  padding: 0 10px 10px 10px;
   display: flex;
 }
 
@@ -30,6 +31,32 @@
 
 .form input[type='number'] {
   -moz-appearance: textfield;
+}
+
+.form input.error {
+  border-bottom: 1px red solid;
+  animation: shake 200ms ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-4%);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(4%);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(-4%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .form button {

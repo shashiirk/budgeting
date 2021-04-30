@@ -1,26 +1,21 @@
 import styles from './BudgetItem.module.css';
 
+const getIndianCurrency = (num) => {
+  return num.toLocaleString('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  });
+};
+
 const BudgetItem = (props) => {
-  const MONTHS = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const date = props.item.dateTime;
 
-  const date = props.item.date;
+  const budgetItemDate = `${date.day} ${date.month} ${date.year} | ${date.hours}:${date.minutes}`;
 
-  const budgetItemDate = `${date.getDay()} ${
-    MONTHS[date.getMonth()]
-  } ${date.getFullYear()} | ${date.getHours()}:${date.getMinutes()}`;
+  const removeItemHandler = () => {
+    props.onRemove(props.item.id);
+  };
 
   return (
     <li className={styles.item}>
@@ -35,8 +30,11 @@ const BudgetItem = (props) => {
             : styles['expenses-amount']
         }
       >
-        {props.item.amount}
+        {getIndianCurrency(props.item.amount)}
       </p>
+      <div className={styles.delete} onClick={removeItemHandler}>
+        <i className="fas fa-minus-circle"></i>
+      </div>
     </li>
   );
 };
