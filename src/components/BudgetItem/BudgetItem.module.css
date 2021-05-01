@@ -42,3 +42,9 @@
     color: white;
   }
 }
+
+@media (hover: none) {
+  .delete:active {
+    color: white;
+  }
+}
