@@ -16,3 +16,9 @@ body {
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }
+
+@media (max-width: 600px) {
+  body {
+    background: #2d3138;
+  }
+}

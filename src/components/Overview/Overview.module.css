@@ -2,8 +2,7 @@
   background-color: rgba(255, 255, 255, 0.45);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  max-width: 340px;
-  width: 100%;
+  width: 340px;
   margin: 0 auto 14px;
   padding: 8px;
   border-radius: 36px;
@@ -55,4 +54,10 @@
 
 .expense .amount {
   color: #ff672f;
+}
+
+@media (max-width: 600px) {
+  .overview {
+    width: 100%;
+  }
 }
