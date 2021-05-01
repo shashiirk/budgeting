@@ -1,7 +1,7 @@
 .container {
   max-width: 800px;
   width: 100%;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 56px);
   padding: 14px;
   margin: auto;
   display: flex;

@@ -1,7 +1,5 @@
 .overview {
-  background-color: rgba(255, 255, 255, 0.45);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background-color: white;
   width: 340px;
   margin: 0 auto 14px;
   padding: 8px;
@@ -25,7 +23,7 @@
 }
 
 .income-expense {
-  background-color: #202328;
+  background-color: #000c13;
   padding: 8px 24px;
   display: flex;
   border-radius: 30px;
@@ -38,8 +36,7 @@
 
 .income-expense .amount {
   font-size: 16px;
-  font-weight: 600;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .income,
@@ -49,11 +46,11 @@
 }
 
 .income .amount {
-  color: #42dcab;
+  color: #44b257;
 }
 
 .expense .amount {
-  color: #ff672f;
+  color: #ff2f2f;
 }
 
 @media (max-width: 600px) {

@@ -5,20 +5,10 @@
 }
 
 body {
-  background-image: url(./assets/bg.svg);
-  background-color: #2d3138;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #000c13;
   color: white;
   font-family: 'Inter', sans-serif;
   height: 100vh;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-}
-
-@media (max-width: 600px) {
-  body {
-    background: #2d3138;
-  }
 }
