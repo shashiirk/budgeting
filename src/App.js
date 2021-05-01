@@ -12,14 +12,14 @@ const EMPTY_STATE = {
 const budgetReducer = (state, action) => {
   if (action.type === 'ADD_INCOME') {
     const updatedIncome = [...state.income];
-    updatedIncome.push(action.item);
+    updatedIncome.unshift(action.item);
     return {
       income: updatedIncome,
       expenses: state.expenses,
     };
   } else if (action.type === 'ADD_EXPENSES') {
     const updatedExpenses = [...state.expenses];
-    updatedExpenses.push(action.item);
+    updatedExpenses.unshift(action.item);
     return {
       income: state.income,
       expenses: updatedExpenses,
