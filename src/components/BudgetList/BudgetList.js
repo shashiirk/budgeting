@@ -11,7 +11,17 @@ const BudgetList = (props) => {
     />
   ));
 
-  return <ul className={styles.list}>{budgetItems}</ul>;
+  const innerContent =
+    budgetItems.length > 0 ? (
+      budgetItems
+    ) : (
+      <p className={styles.empty}>
+        Looks like you haven't added anything here yet. Add your first{' '}
+        {props.type} item by filling the below form.
+      </p>
+    );
+
+  return <ul className={styles.list}>{innerContent}</ul>;
 };
 
 export default BudgetList;
