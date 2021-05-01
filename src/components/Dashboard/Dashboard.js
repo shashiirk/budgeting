@@ -1,29 +1,35 @@
-import BudgetList from '../BudgetList/BudgetList';
-import BudgetForm from '../BudgetForm/BudgetForm';
-import styles from './Dashboard.module.css';
+import { useEffect, useState } from 'react';
+import DesktopDashboard from '../DesktopDashboard/DesktopDashboard';
+import MobileDashboard from '../MobileDashboard/MobileDashboard';
 
 const Dashboard = (props) => {
-  return (
-    <div className={styles.dashboard}>
-      <div className={styles.board}>
-        <h2 className={styles.title}>Income</h2>
-        <BudgetList
-          type="income"
-          items={props.items.income}
-          onRemoveItem={props.onRemoveIncomeItem}
-        />
-        <BudgetForm onAddItem={props.onAddIncomeItem} />
-      </div>
-      <div className={styles.board}>
-        <h2 className={styles.title}>Expenses</h2>
-        <BudgetList
-          type="expenses"
-          items={props.items.expenses}
-          onRemoveItem={props.onRemoveExpensesItem}
-        />
-        <BudgetForm onAddItem={props.onAddExpensesItem} />
-      </div>
-    </div>
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  return width >= 600 ? (
+    <DesktopDashboard
+      items={props.items}
+      onAddIncomeItem={props.onAddIncomeItem}
+      onRemoveIncomeItem={props.onRemoveIncomeItem}
+      onAddExpensesItem={props.onAddExpensesItem}
+      onRemoveExpensesItem={props.onRemoveExpensesItem}
+    />
+  ) : (
+    <MobileDashboard
+      items={props.items}
+      onAddIncomeItem={props.onAddIncomeItem}
+      onRemoveIncomeItem={props.onRemoveIncomeItem}
+      onAddExpensesItem={props.onAddExpensesItem}
+      onRemoveExpensesItem={props.onRemoveExpensesItem}
+    />
   );
 };
 

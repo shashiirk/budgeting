@@ -5,7 +5,6 @@
 }
 
 body {
-  /* border: 1px yellow solid; */
   background-image: url(./assets/bg.svg);
   background-color: #2d3138;
   background-position: center;
@@ -15,4 +14,5 @@ body {
   font-family: 'Inter', sans-serif;
   height: 100vh;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }

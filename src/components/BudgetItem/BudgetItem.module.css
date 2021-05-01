@@ -1,5 +1,4 @@
 .item {
-  /* border: 1px red solid; */
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -7,7 +6,6 @@
 }
 
 .box {
-  /* border: 1px skyblue solid; */
   width: 100%;
 }
 
@@ -25,7 +23,6 @@
 
 .income-amount {
   color: #42dcab;
-  /* border: 1px salmon solid; */
 }
 
 .expenses-amount {

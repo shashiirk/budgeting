@@ -1,5 +1,4 @@
 .container {
-  /* border: 1px red solid; */
   max-width: 800px;
   width: 100%;
   height: calc(100vh - 48px);
