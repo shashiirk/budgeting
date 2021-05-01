@@ -33,24 +33,38 @@
 }
 
 .form input.error {
-  border-bottom: 1px red solid;
-  animation: shake 200ms ease-in-out;
+  animation: shake 300ms ease-in-out;
 }
 
 @keyframes shake {
   0% {
+    transform: translateX(0);
+  }
+  10% {
     transform: translateX(-4%);
   }
   20% {
     transform: translateX(0);
   }
-  40% {
+  30% {
     transform: translateX(4%);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4%);
   }
   60% {
     transform: translateX(0);
   }
+  70% {
+    transform: translateX(4%);
+  }
   80% {
+    transform: translateX(0);
+  }
+  90% {
     transform: translateX(-4%);
   }
   100% {

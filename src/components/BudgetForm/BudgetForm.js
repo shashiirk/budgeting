@@ -24,6 +24,39 @@ const BudgetForm = (props) => {
   const titleInputRef = useRef();
   const amountInputRef = useRef();
 
+  let titleTimerId;
+  let amountTimerId;
+
+  const animateInputTitle = () => {
+    setTitleIsValid(false);
+
+    if (titleTimerId) {
+      clearTimeout(titleTimerId);
+      titleTimerId = setTimeout(() => {
+        setTitleIsValid(true);
+      }, 300);
+    } else {
+      titleTimerId = setTimeout(() => {
+        setTitleIsValid(true);
+      }, 300);
+    }
+  };
+
+  const animateInputAmount = () => {
+    setAmountIsValid(false);
+
+    if (amountTimerId) {
+      clearTimeout(amountTimerId);
+      amountTimerId = setTimeout(() => {
+        setAmountIsValid(true);
+      }, 300);
+    } else {
+      amountTimerId = setTimeout(() => {
+        setAmountIsValid(true);
+      }, 300);
+    }
+  };
+
   const formSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -41,7 +74,7 @@ const BudgetForm = (props) => {
           month: MONTHS[date.getMonth()],
           year: date.getFullYear(),
           hours: date.getHours(),
-          minutes: date.getMinutes(),
+          minutes: ('00' + date.getMinutes()).slice(-2),
         },
       };
 
@@ -51,20 +84,13 @@ const BudgetForm = (props) => {
 
       titleInputRef.current.blur();
       amountInputRef.current.blur();
-
-      setTitleIsValid(true);
-      setAmountIsValid(true);
     } else {
       if (!enteredTitle) {
-        setTitleIsValid(false);
-      } else {
-        setTitleIsValid(true);
+        animateInputTitle();
       }
 
       if (!enteredAmount) {
-        setAmountIsValid(false);
-      } else {
-        setAmountIsValid(true);
+        animateInputAmount();
       }
     }
   };
