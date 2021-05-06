@@ -4,7 +4,7 @@ An easy way to manage your money. It allows you to keep track of your money flow
 
 ## Preview
 
-![preview](https://user-images.githubusercontent.com/48406108/116784367-7d1e4080-aab1-11eb-8088-b75d0c6eefa5.jpg)
+![preview](https://user-images.githubusercontent.com/48406108/117236399-3e3c1200-ae46-11eb-88dc-92eb5a41fcd5.jpg)
 
 ## Live Demo
 
