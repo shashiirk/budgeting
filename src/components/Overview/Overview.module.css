@@ -1,5 +1,5 @@
 .overview {
-  background-color: white;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.45);
   width: 340px;
   margin: 0 auto 14px;
   padding: 8px;
@@ -7,7 +7,6 @@
 }
 
 .balance {
-  color: black;
   text-align: center;
   margin-bottom: 14px;
 }
@@ -15,6 +14,7 @@
 .balance .title {
   font-size: 16px;
   font-weight: 400;
+  margin-bottom: 8px;
 }
 
 .balance .amount {
@@ -23,7 +23,7 @@
 }
 
 .income-expense {
-  background-color: #000c13;
+  background-color: #19242a;
   padding: 8px 24px;
   display: flex;
   border-radius: 30px;
