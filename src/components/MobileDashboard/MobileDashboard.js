@@ -1,5 +1,5 @@
 import BudgetList from '../BudgetList/BudgetList';
-import BudgetForm from '../BudgetForm/BudgetForm';
+import Add from '../Add/Add';
 import styles from './MobileDashboard.module.css';
 import { useState } from 'react';
 
@@ -41,7 +41,10 @@ const MobileDashboard = (props) => {
             items={props.items.income}
             onRemoveItem={props.onRemoveIncomeItem}
           />
-          <BudgetForm onAddItem={props.onAddIncomeItem} />
+          <Add
+            onSetFormType={props.onSetFormType.bind(null, 'income')}
+            onShowBudgetForm={props.onShowBudgetForm}
+          />
         </div>
       ) : (
         <div className={styles.board}>
@@ -50,7 +53,10 @@ const MobileDashboard = (props) => {
             items={props.items.expenses}
             onRemoveItem={props.onRemoveExpensesItem}
           />
-          <BudgetForm onAddItem={props.onAddExpensesItem} />
+          <Add
+            onSetFormType={props.onSetFormType.bind(null, 'expenses')}
+            onShowBudgetForm={props.onShowBudgetForm}
+          />
         </div>
       )}
     </div>

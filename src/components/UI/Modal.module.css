@@ -1,0 +1,43 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 400px;
+  width: 85%;
+  height: fit-content;
+  background-color: #151e23;
+  color: white;
+  padding: 14px;
+  margin: auto;
+  border-radius: 14px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-in 300ms ease-out forwards;
+}
+
+.content {
+  height: 100%;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

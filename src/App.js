@@ -1,4 +1,5 @@
-import { useEffect, useReducer } from 'react';
+import { useState, useEffect, useReducer } from 'react';
+import BudgetForm from './components/BudgetForm/BudgetForm';
 import Overview from './components/Overview/Overview';
 import Dashboard from './components/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
@@ -50,6 +51,8 @@ function App() {
     budgetReducer,
     EMPTY_STATE
   );
+  const [showForm, setShowForm] = useState(false);
+  const [formType, setFormType] = useState(null);
 
   useEffect(() => {
     const localItems = JSON.parse(localStorage.getItem('budget'));
@@ -82,16 +85,38 @@ function App() {
     dispatchBudgetState({ type: 'REMOVE_EXPENSES', id: budgetItemId });
   };
 
+  const showBudgetFormHandler = () => {
+    setShowForm(true);
+  };
+
+  const hideBudgetFormHandler = () => {
+    setShowForm(false);
+  };
+
+  const setFormTypeHandler = (type) => {
+    setFormType(type);
+  };
+
   return (
     <>
       <div className="container">
+        {showForm && (
+          <BudgetForm
+            onAddItem={
+              formType === 'income'
+                ? addIncomeItemHandler
+                : addExpensesItemHandler
+            }
+            onClose={hideBudgetFormHandler}
+          />
+        )}
         <Overview items={budgetState} />
         <Dashboard
           items={budgetState}
-          onAddIncomeItem={addIncomeItemHandler}
           onRemoveIncomeItem={removeIncomeItemHandler}
-          onAddExpensesItem={addExpensesItemHandler}
           onRemoveExpensesItem={removeExpensesItemHandler}
+          onShowBudgetForm={showBudgetFormHandler}
+          onSetFormType={setFormTypeHandler}
         />
       </div>
       <Footer />

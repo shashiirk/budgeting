@@ -1,5 +1,6 @@
 .overview {
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.45);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   width: 340px;
   margin: 0 auto 14px;
   padding: 8px;
@@ -23,7 +24,7 @@
 }
 
 .income-expense {
-  background-color: #19242a;
+  background-color: rgba(0, 0, 0, 0.45);
   padding: 8px 24px;
   display: flex;
   border-radius: 30px;

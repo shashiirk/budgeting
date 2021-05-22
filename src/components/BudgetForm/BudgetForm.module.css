@@ -1,25 +1,65 @@
 .form {
-  padding: 0 10px 10px 10px;
-  display: flex;
+  width: 100%;
+  padding: 16px;
 }
 
-.form input {
+.control {
+  margin-bottom: 14px;
+}
+
+.control label {
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.control input {
   display: block;
   background-color: transparent;
   color: white;
-  border: none;
-  border-bottom: 1px white solid;
-  outline: none;
   font: inherit;
-  font-size: 14px;
-  font-weight: 300;
+  border: 1px solid #434a4e;
+  outline: none;
+  border-radius: 8px;
+  padding: 8px;
   width: 100%;
-  margin-right: 10px;
-  padding: 4px;
 }
 
-.form input::placeholder {
-  color: #808080;
+.control input:focus {
+  border-color: white;
+}
+
+.control p {
+  color: #e12d14;
+  font-size: 14px;
+  font-weight: 400;
+  visibility: hidden;
+}
+
+.actions {
+  padding: 14px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  margin: 0 8px;
+}
+
+.invalid p {
+  visibility: visible;
+}
+
+.invalid input,
+.invalid input:focus {
+  border-color: #e12d14;
 }
 
 .form input::-webkit-outer-spin-button,
@@ -32,57 +72,18 @@
   -moz-appearance: textfield;
 }
 
-.form input.error {
-  animation: shake 300ms ease-in-out;
-}
+@media (hover: hover) {
+  .actions button {
+    transition: filter 140ms ease-in;
+  }
 
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(-4%);
-  }
-  20% {
-    transform: translateX(0);
-  }
-  30% {
-    transform: translateX(4%);
-  }
-  40% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-4%);
-  }
-  60% {
-    transform: translateX(0);
-  }
-  70% {
-    transform: translateX(4%);
-  }
-  80% {
-    transform: translateX(0);
-  }
-  90% {
-    transform: translateX(-4%);
-  }
-  100% {
-    transform: translateX(0);
+  .actions button:hover {
+    filter: brightness(75%);
   }
 }
 
-.form button {
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 4px 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form button .fas {
-  display: block;
+@media (hover: none) {
+  .actions button:active {
+    filter: brightness(75%);
+  }
 }

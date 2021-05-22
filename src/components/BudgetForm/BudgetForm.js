@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { nanoid } from 'nanoid';
 import styles from './BudgetForm.module.css';
+import Modal from '../UI/Modal';
 
 const MONTHS = [
   'Jan',
@@ -23,39 +24,6 @@ const BudgetForm = (props) => {
 
   const titleInputRef = useRef();
   const amountInputRef = useRef();
-
-  let titleTimerId;
-  let amountTimerId;
-
-  const animateInputTitle = () => {
-    setTitleIsValid(false);
-
-    if (titleTimerId) {
-      clearTimeout(titleTimerId);
-      titleTimerId = setTimeout(() => {
-        setTitleIsValid(true);
-      }, 300);
-    } else {
-      titleTimerId = setTimeout(() => {
-        setTitleIsValid(true);
-      }, 300);
-    }
-  };
-
-  const animateInputAmount = () => {
-    setAmountIsValid(false);
-
-    if (amountTimerId) {
-      clearTimeout(amountTimerId);
-      amountTimerId = setTimeout(() => {
-        setAmountIsValid(true);
-      }, 300);
-    } else {
-      amountTimerId = setTimeout(() => {
-        setAmountIsValid(true);
-      }, 300);
-    }
-  };
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -84,35 +52,44 @@ const BudgetForm = (props) => {
 
       titleInputRef.current.blur();
       amountInputRef.current.blur();
+
+      props.onClose();
     } else {
       if (!enteredTitle) {
-        animateInputTitle();
+        setTitleIsValid(false);
       }
 
       if (!enteredAmount) {
-        animateInputAmount();
+        setAmountIsValid(false);
       }
     }
   };
 
   return (
-    <form className={styles.form} onSubmit={formSubmitHandler}>
-      <input
-        className={titleIsValid ? '' : styles.error}
-        ref={titleInputRef}
-        type="text"
-        placeholder="Title"
-      />
-      <input
-        className={amountIsValid ? '' : styles.error}
-        ref={amountInputRef}
-        type="number"
-        placeholder="Amount"
-      />
-      <button type="submit">
-        <i className="fas fa-plus"></i>
-      </button>
-    </form>
+    <Modal onClose={props.onClose}>
+      <form className={styles.form} onSubmit={formSubmitHandler}>
+        <div
+          className={`${styles.control} ${titleIsValid ? '' : styles.invalid}`}
+        >
+          <label htmlFor="title">Title</label>
+          <input ref={titleInputRef} type="text" id="title" />
+          <p>Please enter a valid title</p>
+        </div>
+        <div
+          className={`${styles.control} ${amountIsValid ? '' : styles.invalid}`}
+        >
+          <label htmlFor="amount">Amount</label>
+          <input ref={amountInputRef} type="number" id="amount" />
+          <p>Please enter a valid amount</p>
+        </div>
+        <div className={styles.actions}>
+          <button type="button" onClick={props.onClose}>
+            Cancel
+          </button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </Modal>
   );
 };
 

@@ -17,18 +17,18 @@ const Dashboard = (props) => {
   return width >= 600 ? (
     <DesktopDashboard
       items={props.items}
-      onAddIncomeItem={props.onAddIncomeItem}
       onRemoveIncomeItem={props.onRemoveIncomeItem}
-      onAddExpensesItem={props.onAddExpensesItem}
       onRemoveExpensesItem={props.onRemoveExpensesItem}
+      onShowBudgetForm={props.onShowBudgetForm}
+      onSetFormType={props.onSetFormType}
     />
   ) : (
     <MobileDashboard
       items={props.items}
-      onAddIncomeItem={props.onAddIncomeItem}
       onRemoveIncomeItem={props.onRemoveIncomeItem}
-      onAddExpensesItem={props.onAddExpensesItem}
       onRemoveExpensesItem={props.onRemoveExpensesItem}
+      onShowBudgetForm={props.onShowBudgetForm}
+      onSetFormType={props.onSetFormType}
     />
   );
 };
