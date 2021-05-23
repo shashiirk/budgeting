@@ -32,11 +32,12 @@
 
 .income-expense .title {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .income-expense .amount {
   font-size: 16px;
+  font-weight: 600;
   margin-top: 8px;
 }
 
@@ -47,11 +48,11 @@
 }
 
 .income .amount {
-  color: #44b257;
+  color: #56d941;
 }
 
 .expense .amount {
-  color: #ff2f2f;
+  color: #f01515;
 }
 
 @media (max-width: 600px) {
