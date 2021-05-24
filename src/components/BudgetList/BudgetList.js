@@ -1,6 +1,6 @@
 import BudgetItem from '../BudgetItem/BudgetItem';
 import styles from './BudgetList.module.css';
-import img from '../../assets/search.png';
+import img from '../../assets/search.svg';
 
 const BudgetList = (props) => {
   const budgetItems = props.items.map((item) => (
@@ -17,7 +17,9 @@ const BudgetList = (props) => {
       budgetItems
     ) : (
       <div className={styles.empty}>
-        <img src={img} alt="a women busy in searching" />
+        <div className={styles.img}>
+          <img src={img} alt="a women busy in searching" />
+        </div>
         <p>No transactions yet</p>
       </div>
     );

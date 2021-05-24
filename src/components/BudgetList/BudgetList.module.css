@@ -29,7 +29,7 @@
   overflow: auto;
 }
 
-.empty img {
+.empty .img {
   display: block;
   max-width: 200px;
   width: 75%;
