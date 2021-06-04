@@ -10,7 +10,7 @@ An easy way to manage your money. It allows you to keep track of your money flow
 
 See it live [here](https://shashiirk.github.io/budgeting).
 
-## Get Started
+## Installation
 
 Clone this repository to your local machine
 
